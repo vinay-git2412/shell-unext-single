@@ -27,17 +27,17 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "actFilter",
+						"name": "Filter1",
 						"type": "Filter",
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@variables('dataarray')",
+								"value": "@pipeline().parameters.account_name",
 								"type": "Expression"
 							},
 							"condition": {
-								"value": "@not(equals(item(),'ccc'))\n",
+								"value": "@not(equals(item(),'a'))",
 								"type": "Expression"
 							}
 						}
@@ -47,9 +47,59 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
+				"parameters": {
+					"account_name": {
+						"type": "array",
+						"defaultValue": [
+							"aaa"
+						]
+					}
+				},
 				"variables": {
 					"dataarray": {
 						"type": "Array",
+						"defaultValue": [
+							"aaa",
+							"bbb",
+							"ccc",
+							"ddd"
+						]
+					}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline_params')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "act_Filter1",
+						"type": "Filter",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@pipeline().parameters.account_name",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@not(equals(item(),'ccc' ))",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"parameters": {
+					"account_name": {
+						"type": "array",
 						"defaultValue": [
 							"aaa",
 							"bbb",
