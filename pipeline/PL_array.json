@@ -17,8 +17,20 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "actFilter2",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
+		"parameters": {
+			"account_name": {
+				"type": "String",
+				"defaultValue": "ab-8672"
+			}
+		},
 		"variables": {
 			"dataarray": {
 				"type": "Array",
