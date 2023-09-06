@@ -3,8 +3,10 @@
 	"properties": {
 		"parameters": {
 			"account_name": {
-				"type": "String",
-				"defaultValue": "ab-8672"
+				"type": "array",
+				"defaultValue": [
+					"aaa"
+				]
 			}
 		},
 		"variables": {
