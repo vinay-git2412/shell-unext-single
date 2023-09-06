@@ -1,0 +1,17 @@
+{
+	"name": "PL_array",
+	"properties": {
+		"variables": {
+			"dataarray": {
+				"type": "Array",
+				"defaultValue": [
+					"aaa",
+					"bbb",
+					"ccc",
+					"ddd"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
