@@ -1,6 +1,24 @@
 {
 	"name": "PL_array",
 	"properties": {
+		"activities": [
+			{
+				"name": "actFilter",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('dataarray')",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@not(equals(item(),'ccc'))\n",
+						"type": "Expression"
+					}
+				}
+			}
+		],
 		"variables": {
 			"dataarray": {
 				"type": "Array",
