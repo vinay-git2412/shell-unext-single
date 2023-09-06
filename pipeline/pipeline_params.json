@@ -6,13 +6,23 @@
 				"name": "act_Filter1",
 				"type": "Filter",
 				"dependsOn": [],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.account_name",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@not(equals(item(),'ccc' ))",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
 			"account_name": {
 				"type": "array",
-				"defaultValue": "ab-8672"
+				"defaultValue": "'ccc'"
 			}
 		},
 		"annotations": []
